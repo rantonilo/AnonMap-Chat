@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#FFD100">
+  <link rel="manifest" href="manifest.json">
+  <title>AnonMap Chat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brutal-yellow': '#FFD100',
+            'brutal-pink': '#FF6AC1',
+            'brutal-green': '#50fa7b',
+            'fb-dark': '#18191a',
+            'fb-surface': '#242526',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+    
+    :root {
+      --brutal-bg: #f0f0f0;
+      --brutal-text: #000000;
+      --brutal-surface: #ffffff;
+      --brutal-border-color: #000000;
+    }
+
+    .dark {
+      --brutal-bg: #18191a;
+      --brutal-text: #e4e6eb;
+      --brutal-surface: #242526;
+      --brutal-border-color: #000000;
+    }
+
+    body {
+      font-family: 'Space Grotesk', sans-serif;
+      background-color: var(--brutal-bg);
+      color: var(--brutal-text);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      /* Empêche le défilement élastique sur iOS */
+      overscroll-behavior-y: none;
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+    }
+
+    .brutal-shadow {
+      box-shadow: 5px 5px 0px 0px #000000;
+    }
+
+    .brutal-shadow-hover:hover {
+      box-shadow: 2px 2px 0px 0px #000000;
+      transform: translate(2px, 2px);
+    }
+
+    .brutal-border {
+      border: 3px solid #000000;
+    }
+    
+    .brutal-border-b {
+      border-bottom: 3px solid #000000;
+    }
+
+    .brutal-border-t {
+      border-top: 3px solid #000000;
+    }
+
+    .brutal-border-r {
+      border-right: 3px solid #000000;
+    }
+
+    .mono {
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 14px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--brutal-surface);
+      border-left: 3px solid #000000;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #000000;
+      border: 2px solid var(--brutal-surface);
+    }
+
+    #map { height: 100%; width: 100%; z-index: 1; outline: none; }
+    
+    .leaflet-container {
+        background: #e5e7eb;
+        outline: none;
+    }
+
+    /* Le filtre d'inversion a été supprimé ici pour que la carte reste standard */
+
+    .dark .leaflet-container {
+        background: #111;
+    }
+    
+    /* Support Encoches iPhone/Android */
+    .safe-pt { padding-top: env(safe-area-inset-top); }
+    .safe-pb { padding-bottom: env(safe-area-inset-bottom); }
+    .safe-mb { margin-bottom: env(safe-area-inset-bottom); }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+  }
+}
+</script>
+</head>
+<body class="overflow-hidden">
+  <div id="root" class="h-full w-full"></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</body>
+</html>

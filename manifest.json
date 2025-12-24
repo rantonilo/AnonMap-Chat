@@ -1,0 +1,19 @@
+
+{
+  "name": "AnonMap Chat",
+  "short_name": "AnonMap",
+  "description": "Messagerie anonyme géolocalisée",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0f0f0",
+  "theme_color": "#FFD100",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/854/854878.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

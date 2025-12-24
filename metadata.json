@@ -1,0 +1,7 @@
+{
+  "name": "AnonMap Chat",
+  "description": "A neobrutalist anonymous proximity chat app. Interact with people nearby on a map without ever revealing your identity or precise location history. Ephemeral IDs, 1km scan radius, and zero persistence.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
